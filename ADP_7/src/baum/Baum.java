@@ -1,7 +1,11 @@
 package baum;
 
 public abstract class Baum<E> {
-
+	
+	/**
+	 * Gibt den Wurzel Knoten aus.
+	 * @return der Wurzel Knoten
+	 */
 	abstract public Knoten<E> getMaster();
 	
 	/**
