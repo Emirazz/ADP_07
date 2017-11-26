@@ -18,7 +18,7 @@ class BaumTest {
 		_baum.add(new Knoten<String>("c", 3));
 		_baum.add(new Knoten<String>("f", 6));
 		_baum.add(new Knoten<String>("e", 5));
-		_baum.getInOrder();
+		_baum.getPreOrder();
 	}
 
 }

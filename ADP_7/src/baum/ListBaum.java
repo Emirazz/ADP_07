@@ -17,10 +17,10 @@ public class ListBaum<E> extends Baum<E> {
 		else
 		{
 			Knoten<E> sohn = _master;
-			Knoten<E> vater = sohn;
+			Knoten<E> vater;
 			do
 			{
-				
+				vater = sohn;
 				if(sohn.getKey() < knoten.getKey())
 				{
 					sohn = sohn.getSohnRechts();
