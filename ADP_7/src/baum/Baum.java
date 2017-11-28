@@ -1,5 +1,10 @@
 package baum;
-
+/**
+ * Ein abstrakte Klasse eines binärer Suchbaums.
+ * @author Emira Zorgati, Menan Abdul Ulfat
+ *
+ * @param <E> generischer Typ der zuspeichernden Objekte
+ */
 public abstract class Baum<E> {
 	
 	/**
@@ -63,10 +68,10 @@ public abstract class Baum<E> {
 		Knoten<E> rechts = anf.getSohnRechts();
 		System.out.println(anf.getElem());
 		if(links != null) {
-			inorder(links);
+			preorder(links);
 		}
 		if(rechts != null) {
-			inorder(rechts);
+			preorder(rechts);
 		}
 	}
 	
@@ -79,10 +84,10 @@ public abstract class Baum<E> {
 		Knoten<E> links = anf.getSohnLinks();
 		Knoten<E> rechts = anf.getSohnRechts();
 		if(links != null) {
-			inorder(links);
+			postorder(links);
 		}
 		if(rechts != null) {
-			inorder(rechts);
+			postorder(rechts);
 		}
 		System.out.println(anf.getElem());
 	}

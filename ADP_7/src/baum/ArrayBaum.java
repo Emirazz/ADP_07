@@ -1,5 +1,10 @@
 package baum;
-
+/**
+ * Array Implementation des binären Suchbaums.
+ * @author Emira Zorgati, Menan Abdul Ulfat
+ *
+ * @param <E>
+ */
 public class ArrayBaum<E> extends Baum<E> {
 
 	private Knoten<E>[] _arr;
@@ -12,39 +17,38 @@ public class ArrayBaum<E> extends Baum<E> {
 
 	@Override
 	public Knoten<E> getMaster() {
-		if (_arr[0] == null) {
+		if (_arr[1] == null) {
 			return null;
 		}
-		return _arr[0];
+		return _arr[1];
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void add(Knoten<E> knoten) {
 		int length = _arr.length;
-		if (_last * 2 + 1 >= length) {
+		if (_last * 2 + 1 >= length){
 			Knoten<E>[] array = new Knoten[length * 2];
 			for (int i = 0; i < length; i++) {
 				array[i] = _arr[i];
 			}
 			_arr = array;
 		}
-		// else if(_size == 0)
-		// {
-		// _arr[0] = knoten;
-		// }
 		int index = getIndex(knoten, 1);
-		_last = index;
+		if(_last < index)
+		{
+			_last = index;
+		}
 		_arr[index] = knoten;
-		setKind(index + 1, knoten);
+		setKind(index, knoten);
 	}
 
 	private void setKind(int index, Knoten<E> knoten) {
 		if (index != 1) {
 			if (index % 2 == 0) {
-				_arr[index / 2 - 1].setSohnLinks(knoten);
+				_arr[index / 2 ].setSohnLinks(knoten);
 			} else {
-				_arr[index / 2 - 1].setSohnRechts(knoten);
+				_arr[index / 2 ].setSohnRechts(knoten);
 			}
 		}
 
@@ -52,10 +56,10 @@ public class ArrayBaum<E> extends Baum<E> {
 
 	private int getIndex(Knoten<E> knoten, int index) {
 		int result = 0;
-		if (_arr[index - 1] == null) {
-			result = index - 1;
+		if (_arr[index] == null) {
+			result = index;
 		} else {
-			if (_arr[index - 1].getKey() < knoten.getKey()) {
+			if (_arr[index].getKey() < knoten.getKey()) {
 				result = getIndex(knoten, index * 2 + 1);
 			} else {
 				result = getIndex(knoten, index * 2);

@@ -1,5 +1,10 @@
 package baum;
-
+/**
+ * Listen Implementation des binären Suchbaums.
+ * @author Emira Zorgati, Menan Abdul Ulfat
+ *
+ * @param <E>
+ */
 public class ListBaum<E> extends Baum<E> {
 	private Knoten<E> _master;
 
