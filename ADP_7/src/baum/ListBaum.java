@@ -9,7 +9,7 @@ public class ListBaum<E> extends Baum<E> {
 	private Knoten<E> _master;
 
 	@Override
-	public Knoten<E> getMaster() {
+	public Knoten<E> getWurzel() {
 		return _master;
 	}
 

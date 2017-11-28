@@ -11,7 +11,7 @@ public abstract class Baum<E> {
 	 * Gibt den Wurzel Knoten aus.
 	 * @return der Wurzel Knoten
 	 */
-	abstract public Knoten<E> getMaster();
+	abstract protected Knoten<E> getWurzel();
 	
 	/**
 	 * Dem Baum ein weitern Knoten hinzufügen.
@@ -24,21 +24,21 @@ public abstract class Baum<E> {
 	 * Gibt den Baum in inorder auf der Konsole aus.
 	 */
 	public void getInOrder() {
-		inorder(getMaster());
+		inorder(getWurzel());
 	}
 	
 	/**
 	 * Gibt den Baum in preorder auf der Konsole aus.
 	 */
 	public void getPreOrder() {
-		preorder(getMaster());
+		preorder(getWurzel());
 	}
 	
 	/**
 	 * Gibt den Baum in postorder auf der Konsole aus.
 	 */
 	public void getPostOrder() {
-		postorder(getMaster());
+		postorder(getWurzel());
 	}
 	
 	/**

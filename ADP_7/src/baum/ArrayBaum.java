@@ -16,7 +16,7 @@ public class ArrayBaum<E> extends Baum<E> {
 	}
 
 	@Override
-	public Knoten<E> getMaster() {
+	public Knoten<E> getWurzel() {
 		if (_arr[1] == null) {
 			return null;
 		}
